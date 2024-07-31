@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Writing with AI Survey</title>
+    <style>
+        .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .con{
+            margin: auto;
+        }
+        button {
+            background-color: #5CACEE;
+            color: white;
+            border: none;
+            margin: auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            justify-content: center;
+            width: 150px;       /* 设置按钮的宽度 */
+            height: 50px;  
+            text-decoration: none;
+        }
+        .center-margin {
+        display: block; /* 使按钮成为块级元素 */
+        margin: 0 auto; /* 上下边距为0，左右自动，实现水平居中 */
+        width: 100px; /* 可以设置一个宽度 */
+        text-decoration: none;
+        }
+        .button-style {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #5CACEE; /* 绿色背景 */
+        color: white; /* 白色文本 */
+        text-align: center;
+        text-decoration: none; /* 去除下划线 */
+        border: none;
+        border-radius: 5px;
+        margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Writing with AI Survey</h1>
+    <form id="surveyForm">
+        <p>1. What is your age range?</p>
+        <input type="radio" id="18-25" name="age" value="18-25"><label for="18-25">18 - 25</label><br>
+        <input type="radio" id="25-35" name="age" value="25-35"><label for="25-35">25 - 35</label><br>
+        <input type="radio" id="35-45" name="age" value="35-45"><label for="35-45">35 - 45</label><br>
+        <input type="radio" id="45-55" name="age" value="45-55"><label for="45-55">45 - 55</label><br>
+        <input type="radio" id=">55" name="age" value=">55"><label for=">55">> 55</label><br>
+
+        <p>2. What is your gender?</p>
+        <input type="radio" id="female" name="gender" value="Female"><label for="female">Female</label><br>
+        <input type="radio" id="male" name="gender" value="Male"><label for="male">Male</label><br>
+        <input type="radio" id="non-binary" name="gender" value="Non-binary"><label for="non-binary">Non-binary</label><br>
+        <input type="radio" id="not-specified" name="gender" value="I do not wish to specify"><label for="not-specified">I do not wish to specify</label><br>
+
+        <p>3. What is your level of education?</p>
+        <input type="radio" id="high-school" name="education" value="High-school diploma"><label for="high-school">High-school diploma</label><br>
+        <input type="radio" id="college" name="education" value="College degree"><label for="college">College degree</label><br>
+        <input type="radio" id="graduate" name="education" value="Graduate degree"><label for="graduate">Graduate degree</label><br>
+
+        <p>4. What is your first language?</p>
+        <input type="radio" id="english" name="firstLanguage" value="English"><label for="english">English</label><br>
+        <input type="radio" id="not-english" name="firstLanguage" value="Not English"><label for="not-english">Not English</label><br>
+
+        <p>5. How do you rate your level of English proficiency?</p>
+        <input type="radio" id="not-fluent" name="englishProficiency" value="I understand English, but I am not fluent"><label for="not-fluent">I understand English, but I am not fluent</label><br>
+        <input type="radio" id="fluent" name="englishProficiency" value="I am fluent"><label for="fluent">I am fluent</label><br>
+        <input type="radio" id="native" name="englishProficiency" value="I am a native speaker"><label for="native">I am a native speaker</label><br>
+
+        <p>6. What is your level of writing expertise?</p>
+        <input type="radio" id="professional" name="writingExpertise" value="I am a professional writer"><label for="professional">I am a professional writer</label><br>
+        <input type="radio" id="regular" name="writingExpertise" value="I am not a professional writer, but I write regularly"><label for="regular">I am not a professional writer, but I write regularly</label><br>
+        <input type="radio" id="occasional" name="writingExpertise" value="I am not a professional writer, and I do not write regularly"><label for="occasional">I am not a professional writer, and I do not write regularly</label><br>
+
+        <p>7. What is your ethnicity?</p>
+        <input type="radio" id="hispanic" name="ethnicity" value="Hispanic or Latino"><label for="hispanic">Hispanic or Latino</label><br>
+        <input type="radio" id="not-hispanic" name="ethnicity" value="Not Hispanic or Latino"><label for="not-hispanic">Not Hispanic or Latino</label><br>
+        <input type="radio" id="ethnicity-not-specified" name="ethnicity" value="Prefer not to say"><label for="ethnicity-not-specified">Prefer not to say</label><br>
+
+        <p>8. What is your race?</p>
+        <input type="radio" id="american-indian" name="race" value="American Indian or Alaska Native"><label for="american-indian">American Indian or Alaska Native</label><br>
+        <input type="radio" id="asian" name="race" value="Asian"><label for="asian">Asian</label><br>
+        <input type="radio" id="black" name="race" value="Black or African American"><label for="black">Black or African American</label><br>
+        <input type="radio" id="pacific-islander" name="race" value="Native Hawaiian or Other Pacific Islander"><label for="pacific-islander">Native Hawaiian or Other Pacific Islander</label><br>
+        <input type="radio" id="white" name="race" value="White"><label for="white">White</label><br>
+        <input type="radio" id="race-not-specified" name="race" value="Prefer not to say"><label for="race-not-specified">Prefer not to say</label><br>
+
+        <p>9. Have you used assistive technology in writing before this study?</p>
+        <input type="radio" id="basic-tech" name="assistiveTech" value="Yes, only spell check, or grammar check, or autocomplete"><label for="basic-tech">Yes, only spell check, or grammar check, or autocomplete</label><br>
+        <input type="radio" id="advanced-tech" name="assistiveTech" value="Yes, more advanced writing assistants"><label for="advanced-tech">Yes, more advanced writing assistants</label><br>
+        <input type="radio" id="no-tech" name="assistiveTech" value="No"><label for="no-tech">No</label><br>
+
+        <p>10. How do you describe your attitude towards working with AI tools?</p>
+        <input type="radio" id="enjoy-ai" name="aiAttitude" value="I am someone who would enjoy working with an AI"><label for="enjoy-ai">I am someone who would enjoy working with an AI</label><br>
+        <input type="radio" id="collaborate-ai" name="aiAttitude" value="I am someone who would like to collaborate with an AI to accomplish my work"><label for="collaborate-ai">I am someone who would like to collaborate with an AI to accomplish my work</label><br>
+        <input type="radio" id="fun-ai" name="aiAttitude" value="I am someone who would find it fun to work with an AI"><label for="fun-ai">I am someone who would find it fun to work with an AI</label><br>
+
+        <br><br>
+
+        <!-- <a href="style.html" class="button-style" onclick="submitForm()">Submit</a> -->
+        <button type="button"  class="button-style" id="submit">Submit</button>
+        
+    </form>
+</div>
+    <script>
+            function generateTimeBasedRandom() {
+                var timestamp = new Date().getTime();
+                var randomSeed = timestamp % 6; 
+                return randomSeed;
+            }
+
+       
+
+            document.getElementById('submit').addEventListener('click', function () {
+                const form = document.getElementById('surveyForm');
+                const formData = new FormData(form);
+                let allQuestionsAnswered = true;
+                // List all the question names as they appear in the 'name' attribute of the form
+                const questions = ['age', 'gender', 'education', 'firstLanguage', 'englishProficiency', 'writingExpertise', 'ethnicity', 'race', 'assistiveTech', 'aiAttitude'];
+    
+                questions.forEach((question) => {
+                    if (!formData.has(question)) {
+                        allQuestionsAnswered = false;
+                    }
+                });
+    
+                if (allQuestionsAnswered) {
+                    const json = {};
+                    formData.forEach((value, key) => { json[key] = value; });
+                    console.log(JSON.stringify(json)); // Print JSON to the console or handle as needed
+                    const randnum = generateTimeBasedRandom()
+                    if (randnum<=2){
+                        window.location.replace('upload.html');
+                    }else{
+                        window.location.replace('style.html');
+                    }
+                    
+                } else {
+                    alert("Please answer all questions before submitting.");
+                }
+            });
+            // function submitForm() {
+            //     const form = document.getElementById('surveyForm');
+            //     const formData = new FormData(form);
+            //     let allQuestionsAnswered = true;
+            //     // List all the question names as they appear in the 'name' attribute of the form
+            //     const questions = ['age', 'gender', 'education', 'firstLanguage', 'englishProficiency', 'writingExpertise', 'ethnicity', 'race', 'assistiveTech', 'aiAttitude'];
+    
+            //     questions.forEach((question) => {
+            //         if (!formData.has(question)) {
+            //             allQuestionsAnswered = false;
+            //         }
+            //     });
+    
+            //     if (allQuestionsAnswered) {
+            //         const json = {};
+            //         formData.forEach((value, key) => { json[key] = value; });
+            //         console.log(JSON.stringify(json)); // Print JSON to the console or handle as needed
+                    
+            //     } else {
+            //         alert("Please answer all questions before submitting.");
+            //     }
+            // }
+    </script>
+</body>
+</html>

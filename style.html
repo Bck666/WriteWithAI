@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing with AI</title>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+  <style>
+    .ghost-text {
+      color: grey;
+      /* 设置文本颜色为灰色 */
+      pointer-events: none;
+      /* 使鼠标事件不影响这些文本，如点击等 */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      padding-top: 20px;
+    }
+
+    .uploadcontainer {
+      width: 80%;
+      margin: auto;
+      padding-top: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .discussion {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    #editor {
+      height: 200px;
+    }
+
+    .prompt {
+      background-color: #e1ecf4;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .prompt p {
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 16px;
+    }
+
+    button {
+      background-color:#5CACEE ;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+
+  .file-upload-wrapper {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #cccccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      background-color: #ffffff;
+  }
+
+  .file-upload-wrapper img {
+      width: 150px;
+      height: 150px;
+      border-radius: 20%;  /* 这会使图片的四个角都变成圆形 */
+  }
+
+  .file-upload-input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+  }
+
+  #fileContent {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      border: 1px solid #cccccc;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #ffffff;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="prompt" style="display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h3>Task 1/3</h3>
+        <p>Please read the prompt above and respond to it in the text editor below. You have to write at least 250 words.</p>
+        
+      </div>
+      <button type="button" style="background-color: #4CAF50;" id="SaveBtn">Save and Continue</button>
+    </div>
+    
+    <div class="discussion">
+      <h2>Is social media good for society?</h2>
+      <p>We all use social media. We chat with friends and strangers, share our thoughts, photos, and more. But is
+        social media good for us and for society? I am having a hard time to make up my mind. What do you think?</p>
+
+      <!-- Create the editor container -->
+      <div id="editor"></div>
+      <button type="button" id="createTextBtn">Generate New Suggestion</button>
+      <button type="button" id="acceptBtn">Accept Suggestion (or Press TAB)</button>
+      
+      
+    </div>
+  </div>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">  </script>
+  <script src="stylescript.js"></script>
+</body>
+
+</html>

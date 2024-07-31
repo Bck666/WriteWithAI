@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Writing with AI</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1 style = "text-align: center">Writing with AI</h1>
+    <h3>You're now being presented with a series of rating scales.</h3>
+    <p>For each of the six scales, evaluate the task you recently performed by moving the slider bars to the location that matches your experience. Each line has two endpoint descriptors that describe the scale.</p>
+    <p>Consider your responses carefully in distinguishing among the different task conditions, and consider each scale individually.</p>
+    <div >
+
+        <div class="rating">
+            <h3 for="mental-demand">1. Mental Demand</h3> 
+            <p>How much mental and perceptual activity was required (e.g., thinking, deciding, calculating, remembering, reading, concentrating, etc.)?</p>
+            <span class="low">Low</span><input type="range" id="mental-demand" name="mental-demand" min="1"  max="20"  value="1"><span class="high">High</span>
+        </div>
+        
+        <div class="rating">
+            <h3 for="physical-demand">2. Physical Demand</h3> 
+            <p>How much physical activity was required (e.g., typing, staring at the monitor ,etc.)?</p>
+            <span class="low">Low</span>
+            <input type="range" id="physical-demand" name="physical-demand" min="1"  max="20"  value="1">
+            <span class="high">High</span>
+        </div>
+        
+        <div class="rating">
+            <h3 for="temporal-demand">3. Temporal Demand</h3> 
+            <p>How much time pressure did you feel due to the rate or pace at which the task elements occured?  </p>
+            <span class="low">Low</span>
+            <input type="range" id="temporal-demand" name="temporal-demand" min="1"  max="20"  value="1">
+            <span class="high">High</span>
+        </div>
+        
+        <div class="rating">
+            <h3 for="effort">4. Effort</h3> 
+            <p>How hard did you have to work (mentally and physically) to accomplish your level of performance?</p>
+            <span class="low">Low</span>
+            <input type="range" id="effort" name="effort" min="1"  max="20"  value="1">
+            <span class="high">High</span>
+        </div>
+        
+        <div class="rating">
+            <h3 for="performance">5. Performance</h3> 
+            <p>How successful do you think you were in accomplishing the goals of the task set by the experimenter (or yourself)?</p>
+            <span class="low">Good</span>
+            <input type="range" id="performance" name="performance" min="1"  max="20"  value="1">
+            <span class="high">Poor</span>
+        </div>
+        
+        <div class="rating">
+            <h3 for="frustration">6. Frustration</h3> 
+            <p>How insecure, discouraged, irritated, stressed, and annoyed were you during the task?</p>
+            <span class="low">Low</span>
+            <input type="range" id="frustration" name="frustration" min="1"  max="20"  value="1">
+            <span class="high">High</span>
+        </div>
+        <br><br>
+        <button type="submit" id ="submitbtn">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+</div>
+</body>
+<script>
+        document.getElementById('submitbtn').addEventListener('click', function () {
+            // 获取所有的滑动条
+            var sliders = document.querySelectorAll('input[type="range"]');
+            var allUnchanged = true;
+            // 检查每一个滑动条的值是否仍然是1
+            sliders.forEach(function(slider) {
+                if (slider.value !== '1') {
+                    allUnchanged = false;
+                }
+            });
+            // 如果所有滑动条的值都没有改变，不执行页面跳转
+            if (!allUnchanged) {
+                var newUrl = 'endpage.html';
+                window.location.replace(newUrl);
+            } else {
+                alert("Please adjust the sliders before submitting.");
+            }
+        });
+</script>
+</html>
